@@ -1,7 +1,7 @@
 "use strict";
 
 var app = angular.module('ngcq5', [
-    'ngRoute'
+    'ngRoute', 'page'
 ]);
 
 app.config(['$routeProvider',

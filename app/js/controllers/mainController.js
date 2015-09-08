@@ -1,5 +1,5 @@
-app.controller('mainController', function ($scope) {
+app.controller('mainController', function ($scope, pageCtx) {
     "use strict";
 
-    $scope.message = "Yeahhh ! You're ready !";
+    $scope.message = pageCtx.configuration();
 });
