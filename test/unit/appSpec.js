@@ -13,7 +13,7 @@ describe("ngcq5 application", function () {
 
     it("should have a success message initialized", inject(function () {
         expect(scope.message).toBeTruthy();
-        expect(scope.message).toBe('Yeahhh ! You\'re ready !');
+        expect(scope.message).toBe('campaignName');
     }));
 
 });

@@ -1,5 +1,4 @@
-app.controller('bController', function ($scope) {
+app.controller('bController', function ($scope, pageCtx) {
     "use strict";
-
-    $scope.message = "Maybe you're not!";
+    $scope.message = pageCtx.cookieType();
 });

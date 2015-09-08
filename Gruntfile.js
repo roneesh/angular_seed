@@ -61,7 +61,9 @@ module.exports = function(grunt) {
                     src: [
                         'index.html',
                         'img/**',
-                        'etc/designs/shc/global/base/js/ngcq5/partials/*'
+                        'etc/designs/shc/global/base/js/ngcq5/partials/*',
+                        'js/mimic.js',
+                        'vendor/angular/angular.js'
                     ]
                 }]
             }
@@ -126,7 +128,7 @@ module.exports = function(grunt) {
                         forms: true
                     },
                     server: {
-                        baseDir: '<%= distDir %>'
+                        baseDir: '<%= assetsDir %>'
                     }
                 }
             }
@@ -177,16 +179,16 @@ module.exports = function(grunt) {
             }
         },
         karma: {
-            dev_unit: {
+           dist_unit: {
                 options: {
-                    configFile: 'test/conf/unit-test-conf.js',
-                    background: true,
-                    singleRun: false,
+                    configFile: 'test/conf/unit-test-conf-dist.js',
+                    background: false,
+                    singleRun: true,
                     autoWatch: true,
                     reporters: ['progress']
                 }
             },
-            dist_unit: {
+            dev_unit: {
                 options: {
                     configFile: 'test/conf/unit-test-conf.js',
                     background: false,

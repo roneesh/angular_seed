@@ -15,7 +15,8 @@
         "angular": false,
         "token": true,
         "require" : true,
-        "app": true
+        "app": true,
+        "console" : true
     },
     "browser": true,
     "sub" : true
