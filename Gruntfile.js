@@ -62,7 +62,7 @@ module.exports = function(grunt) {
                         'index.html',
                         'img/**',
                         'etc/designs/shc/global/base/js/ngcq5/partials/*',
-                        'js/mimic.js',
+                        'js/author.js',
                         'vendor/angular/angular.js'
                     ]
                 }]
