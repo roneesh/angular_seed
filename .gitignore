@@ -1,6 +1,7 @@
 node_modules
 .tmp
-dist
+dist/vendor
+dist/index.html
 app/vendor
 .tmp/
 .idea
