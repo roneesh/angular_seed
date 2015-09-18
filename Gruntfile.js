@@ -61,7 +61,7 @@ module.exports = function(grunt) {
                     src: [
                         'index.html',
                         'img/**',
-                        'etc/designs/shc/global/base/js/ngcq5/partials/*',
+                        'etc/designs/shc/dynamicCampaignComponent/partials/*',
                         'js/author.js',
                         'vendor/angular/angular.js'
                     ]
@@ -120,6 +120,7 @@ module.exports = function(grunt) {
                 },
                 options: {
                     watchTask: true,
+                    open: false,
                     ghostMode: {
                         clicks: true,
                         scroll: true,
@@ -128,7 +129,7 @@ module.exports = function(grunt) {
                         forms: true
                     },
                     server: {
-                        baseDir: '<%= assetsDir %>'
+                        baseDir: '<%= distDir %>'
                     }
                 }
             }
@@ -184,7 +185,7 @@ module.exports = function(grunt) {
                     configFile: 'test/conf/unit-test-conf-dist.js',
                     background: false,
                     singleRun: true,
-                    autoWatch: true,
+                    autoWatch: false,
                     reporters: ['progress']
                 }
             },
@@ -235,7 +236,7 @@ module.exports = function(grunt) {
     grunt.registerTask('dev', [
         'less',
         'browserSync',
-        'karma:dev_unit:start',
+        //'karma:dev_unit:start',
         'watch'
     ]);
     grunt.registerTask('report', [
