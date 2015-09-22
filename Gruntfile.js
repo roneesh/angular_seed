@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
     'use strict';
     require('load-grunt-tasks')(grunt);
+    grunt.loadNpmTasks('grunt-githooks');
     grunt.initConfig({
         assetsDir: 'app',
         distDir: 'dist',
@@ -35,6 +36,12 @@ module.exports = function(grunt) {
                         'ci'
                     ]
                 }
+            }
+        },
+        githooks: {
+            all: {
+                // Will run the jshint and test:unit tasks at every commit
+                'pre-commit': 'karma:dev_unit:start',
             }
         },
         wiredep: {
@@ -129,6 +136,22 @@ module.exports = function(grunt) {
                         forms: true
                     },
                     server: {
+                        baseDir: '<%= assetsDir %>'
+                    }
+                }
+            },
+            prod: {
+                bsFiles: {
+                    src: [
+                        '<%= assetsDir %>/**/*.html',
+                        '<%= assetsDir %>/**/*.js',
+                        '<%= assetsDir %>/**/*.css'
+                    ]
+                },
+                options: {
+                    watchTask: true,
+                    open: false,
+                    server: {
                         baseDir: '<%= distDir %>'
                     }
                 }
@@ -180,18 +203,18 @@ module.exports = function(grunt) {
             }
         },
         karma: {
-           dist_unit: {
+            dist_unit: {
                 options: {
                     configFile: 'test/conf/unit-test-conf-dist.js',
                     background: false,
                     singleRun: true,
-                    autoWatch: false,
+                    autoWatch: true,
                     reporters: ['progress']
                 }
             },
             dev_unit: {
                 options: {
-                    configFile: 'test/conf/unit-test-conf.js',
+                    configFile: 'test/conf/unit-test-conf-dev.js',
                     background: false,
                     singleRun: true,
                     autoWatch: false,
@@ -234,8 +257,15 @@ module.exports = function(grunt) {
         'plato'
     ]);
     grunt.registerTask('dev', [
+        'githooks',
         'less',
-        'browserSync',
+        'browserSync:dev',
+        //'karma:dev_unit:start',
+        'watch'
+    ]);
+    grunt.registerTask('prod', [
+        'package',
+        'browserSync:prod',
         //'karma:dev_unit:start',
         'watch'
     ]);

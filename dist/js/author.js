@@ -7,7 +7,7 @@ page.factory('pageCtx', function(){
             return JSON.parse('{"1": 1, "2": 2, "3": {"4": 4, "5": {"6": 6}}}');
         },
         cookieType: function(){
-            return "cookieType5656999";
+            return "cookieType5656998";
         },
         campaignName: function(){
             return "campaignName";
