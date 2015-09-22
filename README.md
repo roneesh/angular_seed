@@ -5,6 +5,9 @@ ngcq5
 1. Install [node and npm](http://www.nodejs.org)
 2. Install **Grunt** running `npm install -g grunt-cli`
 3. Install **Bower** running `npm install -g bower`
+4. `bower install`
+5. `npm install`
+
 
 ## Developement
 * Run `grunt dev` to start a static web server and open your browser. This will serve files from the `app` folder.
@@ -18,6 +21,21 @@ ngcq5
 * Your package will be generated in a `dist` folder and your javascripts and stylesheets will be concatenated, minified and versionned.
 * The files you will need to carry over into CQ5 (JS, CSS, HTML) will be in the dist folder.
 
-## Available Grunt tasks
-* `grunt test:unit` : run karma unit tests and show test coverage in console.
+## Other Grunt tasks
+* `grunt test:unit` : Package and run karma unit tests. This is also run automatically as a pre-commit hook.
 * `grunt report` : open complexity report in your browser
+
+## CQ5 gotchas
+* The module `page` present in `author.js` is mocking what comes from a CQ5 author. It is not part of the js files which get
+minified and bundled. Its runtime conterpart comes from script on the JSP (see `sampleCQ5JSP.jsp`)
+* angular.min.js is also packaged from CQ5 directly as it's already present as a node.
+
+## Steps to get started
+* Clone this repo
+* Rename the project by changing the name in app.js, package.json, index.html, and bower.json.
+* Remove/Modify existing bootstrap controllers, routes, views as needed.
+* Package and move to CQ5.
+
+## Wiredep
+Wiredep that's used by this project uses conventions in the index.html file to figure out what files to minify.
+It also generates into index.html the list of external dependencies from bower.json. Read this for a better understanding : https://github.com/stephenplusplus/grunt-wiredep

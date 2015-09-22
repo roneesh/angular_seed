@@ -277,5 +277,5 @@ module.exports = function(grunt) {
         'connect:test',
         'karma:e2e'
     ]);
-    grunt.registerTask('test:unit', ['karma:dist_unit:start']);
+    grunt.registerTask('test:unit', ['package','karma:dist_unit:start']);
 };
