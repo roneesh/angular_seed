@@ -41,7 +41,7 @@ module.exports = function(grunt) {
         githooks: {
             all: {
                 // Will run the jshint and test:unit tasks at every commit
-                'pre-commit': 'karma:dev_unit:start',
+                'pre-push': 'karma:dev_unit:start',
             }
         },
         wiredep: {
