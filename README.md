@@ -5,8 +5,8 @@ ngcq5
 1. Install [node and npm](http://www.nodejs.org)
 2. Install **Grunt** running `npm install -g grunt-cli`
 3. Install **Bower** running `npm install -g bower`
-4. `bower install`
-5. `npm install`
+4. `npm install` -- This installs tools for development like grunt and karma
+5. `bower install` -- This installs libaries like Angular
 
 
 ## Developement

@@ -167,7 +167,7 @@ module.exports = function(grunt) {
         },
         watch: {
             less: {
-                files: ['<%= assetsDir %>/less/**/*.less'],
+                files: ['<%= assetsDir %>/**/*.less'],
                 tasks: ['less:all']
             }
         },
@@ -183,11 +183,11 @@ module.exports = function(grunt) {
         },
         less: {
             options: {
-                paths: ['<%= assetsDir %>/less']
+                paths: ['<%= assetsDir %>/**/*.less']
             },
             all: {
                 files: {
-                    '<%= assetsDir %>/css/app.css': '<%= assetsDir %>/less/app.less'
+                    '<%= assetsDir %>/global/app.css': '<%= assetsDir %>/global/app.less'
                 }
             }
         },
