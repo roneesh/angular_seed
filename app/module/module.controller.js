@@ -5,9 +5,9 @@
 		.module('ngcq5')
 		.controller('moduleController', moduleController);
 
-	weeklyAdsController.$inject = ['moduleFactory', '$state', '$scope', '$location', '$rootScope'];
+	moduleController.$inject = ['moduleFactory', '$state', '$scope', '$location', '$rootScope'];
 
-	function weeklyAdsController(moduleFactory, $state, $scope, $location, $rootScope) { 
+	function moduleController(moduleFactory, $state, $scope, $location, $rootScope) { 
 
 		var vm = this; // vm means viewModel
 
