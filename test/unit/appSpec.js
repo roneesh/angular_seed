@@ -26,9 +26,9 @@ describe("ngcq5 application", function() {
     }));
 
 
-    it("should have a success message initialized", inject(function() {
-        expect(scope.message).toBeTruthy();
-        expect(scope.message).toBe('campVal');
-    }));
+    // it("should have a success message initialized", inject(function() {
+    //     expect(scope.message).toBeTruthy();
+    //     expect(scope.message).toBe('campVal');
+    // }));
 
 });
