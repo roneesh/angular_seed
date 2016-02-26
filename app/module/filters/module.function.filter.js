@@ -8,9 +8,9 @@
     -> results in 'TEST' becoming 'test'
 */
 
-app.filter('module', module);
+app.filter('moduleFilter', moduleFilter);
 
-function module () {
+function moduleFilter () {
   return function (str) {
     return str;
   };

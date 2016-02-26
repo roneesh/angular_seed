@@ -7,9 +7,9 @@
 
 angular
     .module('ngcq5')
-    .directive('module', moduleDirective);
+    .directive('moduleDirective', moduleDirective);
 
-setTabSize.$inject = [''];
+moduleDirective.$inject = [''];
 
 function moduleDirective() {
 
