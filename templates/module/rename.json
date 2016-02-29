@@ -1,0 +1,6 @@
+{
+  "module.less": "{%= snake_case_module_name %}.less",
+  "module.html": "{%= snake_case_module_name %}.html",
+  "module.factory.js": "factory.{%= snake_case_module_name %}.js",
+  "module.controller.js": "controller.{%= snake_case_module_name %}.js"
+}
