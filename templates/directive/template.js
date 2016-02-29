@@ -33,7 +33,7 @@ exports.template = function(grunt, init, done) {
     props.snake_case_directive_name = props.directive_name.replace(/([A-Z])/g, function (x,y){return "_" + y.toLowerCase()});
 
     // Files to copy (and process).
-    var files = init.filesToCopy();
+    var files = init.filesToCopy(props);
 
     // Actually copy (and process) files.
     init.copyAndProcess(files, props);
