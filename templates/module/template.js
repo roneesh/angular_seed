@@ -37,13 +37,15 @@ exports.template = function(grunt, init, done) {
     // Files to copy (and process).
     var files = init.filesToCopy(props);
 
+    var projectRoot = __filename.split('/templates')[0];
+    grunt.file.mkdir(projectRoot + '/app/' + snake_case_module_name);
     // Actually copy (and process) files.
     init.copyAndProcess(files, props);
     grunt.file.mkdir('./directives');
     grunt.file.mkdir('./filters');
 
     // Append less file to app.less
-    var appLess = grunt.file.read('../../app/global/app.less')
+    var appLess = grunt.file.read(projectRoot + '/app/global/app.less');
     appLess = appLess + "\n@import '" + props.snake_case_module_name + "';";
     grunt.file.write('../../app/global/app.less', appLess);
     
