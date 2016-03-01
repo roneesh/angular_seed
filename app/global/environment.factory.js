@@ -3,7 +3,7 @@
 
 	angular
 		.module('ngcq5')
-		.factory('Factory', environmentFactory);
+		.factory('environmentFactory', environmentFactory);
 
 	environmentFactory.$inject = [];
 
