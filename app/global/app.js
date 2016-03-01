@@ -1,18 +1,18 @@
-"use strict";
+(function() {
+    'use strict';
 
-var app = angular.module('ngcq5', [
-    'ngRoute', 'page'
-]);
+    angular
+        .module('ngcq5', ['ui.router', 'page' ])
+        .config(config);
 
-app.config(['$routeProvider',
-    function($routeProvider) {
-        $routeProvider.
-        when('/', {
-            templateUrl: '../module/module.html',
-            controller: 'mainController'
-        }).
-        otherwise({
-            redirectTo: '/'
-        });
+    function config($stateProvider, $locationProvider) {
+        // $stateProvider
+        //     .state('home', {
+        //         url: '/',
+        //         templateUrl: '',
+        //         controller: '',
+        //         controllerAs: 'vm'
+        //     });
+        //$locationProvider.html5Mode(true);
     }
-]);
+})();

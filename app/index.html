@@ -14,20 +14,18 @@
 </head>
 <body>
 
- <div ng-view></div>
-<script src="vendor/angular/angular.js"></script>
-<script type="text/javascript" src="asapBoilerplate/author.js"></script>
-<!-- build:js js/ngcq5.js -->
-<!-- bower:js -->
-<script src="vendor/angular-route/angular-route.js"></script>
-<!-- endbower -->
-<script type="text/javascript" src="global/app.js"></script>
-<script type="text/javascript" src="glboal/environment.factory.js"></script>
-<script type="text/javascript" src="module/module.controller.js"></script>
-<script type="text/javascript" src="module/module.factory.js"></script>
-<script type="text/javascript" src="module/directives/module.function.directive.js"></script>
-<script type="text/javascript" src="module/filters/module.function.filter.js"></script>
-<!-- endbuild -->
+	<div ui-view></div>
+
+	<script src="vendor/angular/angular.js"></script>
+	<script type="text/javascript" src="asapBoilerplate/author.js"></script>
+	<!-- build:js js/ngcq5.js -->
+	<!-- bower:js -->
+	<script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+	<!-- endbower -->
+	<script type="text/javascript" src="global/app.js"></script>
+	<script type="text/javascript" src="glboal/environment.factory.js"></script>
+	<!-- Add module files -->
+	<!-- endbuild -->
 
 </body>
 </html>
