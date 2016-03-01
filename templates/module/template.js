@@ -44,7 +44,7 @@ exports.template = function(grunt, init, done) {
 
     // Append less file to app.less
     var appLess = grunt.file.read('../../app/global/app.less')
-    appLess += "\n@import 'snake_case_module_name'";
+    appLess = appLess + "\n@import '" + props.snake_case_module_name + "';";
     grunt.file.write('../../app/global/app.less', appLess);
     
     // All done!
