@@ -24,7 +24,7 @@ exports.warnOn = '*';
 // The actual init template.
 exports.template = function(grunt, init, done) {
 
-  init.process({type: 'jquery'}, [
+  init.process({}, [
     // Prompt for these values.
     init.prompt('app_name'),
     init.prompt('module_name'),
@@ -32,22 +32,15 @@ exports.template = function(grunt, init, done) {
     // A few additional properties.
     props.upper_case_module_name = props.module_name.charAt(0).toUpperCase() + props.module_name.slice(1);
     props.snake_case_module_name = props.module_name.replace(/([A-Z])/g, function (x,y){return "_" + y.toLowerCase()});
-    props.get_module_name = 'get' + props.upper_case_module_name;
 
     // Files to copy (and process).
     var files = init.filesToCopy(props);
 
-    var projectRoot = __filename.split('/templates')[0];
-    grunt.file.mkdir(projectRoot + '/app/' + snake_case_module_name);
-    // Actually copy (and process) files.
-    init.copyAndProcess(files, props);
     grunt.file.mkdir('./directives');
     grunt.file.mkdir('./filters');
 
-    // Append less file to app.less
-    var appLess = grunt.file.read(projectRoot + '/app/global/app.less');
-    appLess = appLess + "\n@import '" + props.snake_case_module_name + "';";
-    grunt.file.write('../../app/global/app.less', appLess);
+    // Actually copy (and process) files.
+    init.copyAndProcess(files, props);
     
     // All done!
     done();
