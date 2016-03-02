@@ -10,22 +10,12 @@ ngcq5
 6. `bower install` -- This installs libaries like Angular
 
 ## Using Generators via grunt-init
-* The templates folder holds three template folders: directive, filter and module
+* The templates folder holds three generator folders: directive, filter and module
+* To run a generator you simply run `grunt-init relative/path/to/geneator/folder`, it is unecessary to run the template.js file at all.
+* Some example commands: `grunt-init ./templates/module`, or `grunt-init ../../templates/directive`
+* The generator will create the files in whatever folder you are currently inside of in Terminal, so make sure you are in the folder where you want the files to be created
 * The module folder will create our style of module for an angular project, it will create our desired folder structure and style of writing a contorller and factory, it will also create folders to put directives and filters
 * The directive and filter folders are generators to create a single directive or filter file, respectively. 
-* To generate a module, cd into the folder you want it in and run `grunt-init ../path/to/module`
-* To generate a directive file, cd into the folder you want it in and run `grunt-init ../path/to/directive`
-* To generate a filter file, cd into the folde ryou want it in and run `grunt-init ../path/to/filter`
-* Note, in all three cases, it will be a dynamic path to the template folder you want to run. 
-*Example: To create a new functionality in the app called 'Store Locator', and then populate it with one filer and directive each, my commands would look like so:
-** `mkdir app/store_locator`
-** `cd store_locator`
-** `grunt-init ../../templates/module`
-** `cd directives`
-** `grunt-init ../../templates/directive`
-** `cd ../filters`
-** `grunt-init ../../templates/filter`
-*Running these commands will generate the entire scaffold of a feature
 
 ## Developement
 * Run `grunt dev` to start a static web server and open your browser. This will serve files from the `app` folder.
