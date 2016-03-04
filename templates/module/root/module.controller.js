@@ -19,13 +19,17 @@
 	    // 5. Private functions (non-user facing) the controller uses
 	    // 6. An omniture object which holds functions referenced in the DOM and private functions for omniture
 		
+
 		// 1. Data which holds state
 		vm.someData = undefined;
 		
+
 		// 2. UI variables (e.g. changing triggers ng-show/hide or alters filters)
 		vm.ui = {
-			"showFoo" : undefined
+			"showModal" : false,
+			"showDropDown" : true;
 		};
+
 
 		// 3. Functions available in DOM
 	    vm.onClickOfProduct = onClickOfProduct;
@@ -35,7 +39,6 @@
 	    }
 
 	    // 4. Activation
-
 	    function activate() {
 	    	firstFunctionRun();
 	    }
@@ -43,7 +46,7 @@
 	    activate();
 	    
 
-	    // 5. private functions
+	    // 5. Private functions
 	    function firstFunctionRun() {
 	    	return {%= module_name %}Factory.{%= get_module_name %}Data()
 	    		.then(function(response) {
@@ -51,6 +54,14 @@
 	    		}).then(function() {
 
 	    		})
+	    }
+
+
+	    //6. Omniture variables and private functions
+	    scope.omniture = {
+	    	onClickOfDOMObject = function() {
+	    		return true
+	    	}
 	    }
 
 	}
