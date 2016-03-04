@@ -50,7 +50,7 @@
 	    function firstFunctionRun() {
 	    	return {%= module_name %}Factory.{%= get_module_name %}Data()
 	    		.then(function(response) {
-
+	    			vm.someData = response;
 	    		}).then(function() {
 
 	    		})
