@@ -5,6 +5,9 @@ module.exports = function(grunt) {
     grunt.initConfig({
         assetsDir: 'app',
         distDir: 'dist',
+        asapDir: './fakeASAP',
+        asapComponentName: 'exampleComponent',
+        asapViewsDir : 'designs/shc/<%= asapComponentName %>/partials',
         availabletasks: {
             tasks: {
                 options: {
@@ -72,6 +75,43 @@ module.exports = function(grunt) {
                         'js/author.js',
                         'vendor/angular/angular.js'
                     ]
+                }]
+            },
+            toasap: {
+                files: [
+                {
+                    expand: true,
+                    src: ['<%= distDir %>/js/*.js'],
+                    dest: '<%= asapDir %>/aem-vault/jcr_root/etc/designs/shc/<%= asapComponentName %>/clientlibs/js/',
+                    flatten: true,
+                    filter: 'isFile'
+                }, {
+                    expand: true,
+                    src: ['<%= distDir %>/css/*.css'],
+                    dest: '<%= asapDir %>/aem-vault/jcr_root/etc/designs/shc/<%= asapComponentName %>/clientlibs/css/',
+                    flatten: true,
+                    filter: 'isFile'
+                }, {
+                    expand: true,
+                    cwd: '<%= assetsDir %>',
+                    src: '**/*.html',
+                    dest: '<%= asapDir %>/aem-vault/jcr_root/etc/designs/shc/<%= asapComponentName %>/partials',
+                    flatten: true,
+                    filter: 'isFile'
+                }]
+            },
+            toasapjenkins: {
+                files: [{
+                    src: ['dist/js/*.js'],
+                    dest: '../ASAP-QA/aem-vault/jcr_root/etc/designs/shc/**/clientlibs/js'
+                }, {
+                    expand: true,
+                    cwd: 'dist/etc',
+                    src: ['**'],
+                    dest: '../ASAP-QA/aem-vault/jcr_root/etc/'
+                }, {
+                    src: ['dist/css/*.css'],
+                    dest: '../ASAP-QA/aem-vault/jcr_root/etc/designs/shc/**/clientli\bs/css'
                 }]
             }
         },
