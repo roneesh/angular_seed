@@ -7,7 +7,6 @@ module.exports = function(grunt) {
         distDir: 'dist',
         asapDir: './fakeASAP',
         asapComponentName: 'exampleComponent',
-        asapViewsDir : 'designs/shc/<%= asapComponentName %>/partials',
         availabletasks: {
             tasks: {
                 options: {

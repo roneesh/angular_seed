@@ -9,6 +9,13 @@ ngcq5
 5. `npm install` -- This installs tools for development like grunt and karma
 6. `bower install` -- This installs libaries like Angular
 
+## Personalize the Project
+*There are a few places where you'll need to change names to suit your project, instead of using the default name of 'ngcq5'
+1. In the Gruntfile, change the 'asapDir' and 'asapComponentName', 'asapDir' is the path of your 'asap' project folder, e.g. '/Users/some_folder/asap', and 'asapComponentName' is the name of your asap component, e.g 'carousel' or 'productCard'
+2. In app/index.html, change the names of the build files in the build:css and build:js comments.
+3. change the name of the folder to your componetns name in asap for the folder below app/etc/designs/shc/
+
+
 ## Using Generators via grunt-init
 * The templates folder holds three generator folders: directive, filter and module
 * To run a generator you simply run `grunt-init relative/path/to/geneator/folder`, it is unecessary to run the template.js file at all.
@@ -49,8 +56,9 @@ Wiredep that's used by this project uses conventions in the index.html file to f
 It also generates into index.html the list of external dependencies from bower.json. Read this for a better understanding : https://github.com/stephenplusplus/grunt-wiredep
 
 ## Issues
-* Moving partial views to CQ5 (right now in this repo grunt copy:toasap is broken)
-* Routing has to handle view files in module folders changing to the 'etc/cq5/route'
+* Moving partial views to CQ5 (right now in this repo grunt copy:toasap is broken) -- going back to old view structure
+* Routing has to handle view files in module folders changing to the 'etc/cq5/route' -- going back to old view structure
+
 * all grunt tasks have to still work
-* moving views to cq5 has to be easy and bug free
+* moving views to cq5 has to be easy and bug free -- grunt copy task for this
 * adding script tags to index.html via grunt
