@@ -56,9 +56,8 @@ Wiredep that's used by this project uses conventions in the index.html file to f
 It also generates into index.html the list of external dependencies from bower.json. Read this for a better understanding : https://github.com/stephenplusplus/grunt-wiredep
 
 ## Issues
-* Moving partial views to CQ5 (right now in this repo grunt copy:toasap is broken) -- going back to old view structure
-* Routing has to handle view files in module folders changing to the 'etc/cq5/route' -- going back to old view structure
-
-* all grunt tasks have to still work
-* moving views to cq5 has to be easy and bug free -- grunt copy task for this
-* adding script tags to index.html via grunt
+* Moving partial views to CQ5 (right now in this repo grunt copy:toasap is broken) -- DONE, went back to old view structure
+* Routing has to handle view files in module folders changing to the 'etc/cq5/route' -- DONE, went back to old view structure
+* all grunt tasks have to still work - DONE, they are working
+* moving views to cq5 has to be easy and bug free -- DONE, grunt copy task for this
+* adding script tags to index.html via grunt -- DONE, via grunt grunt-script-link-tags plugin
