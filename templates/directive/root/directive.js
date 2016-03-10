@@ -1,17 +1,20 @@
-/* module.directive.js */
-
 /**
-* @desc Describe what the directive is supposed to do here
-* @example <div class="tab" module> ... </div>
-*/
+ * @ngdoc directive
+ * @name {%= directive_name %}.directive:{%= directive_name %}Directive
+ * @restrict A
+ * @description 
+ * Describe what the directive is supposed to do here
+ * Example: <div class="example" directive-name> ... </div>
+ **/
+
 
 angular
     .module('{%= module_name %}')
-    .directive('{%= directive_name %}Directive', {%= directive_name %}Directive);
+    .directive('{%= directive_name %}', {%= directive_name %});
 
-{%= directive_name %}Directive.$inject = [''];
+{%= directive_name %}.$inject = [''];
 
-function {%= directive_name %}Directive() {
+function {%= directive_name %}() {
 
     var directive = {
         restrict: 'A',

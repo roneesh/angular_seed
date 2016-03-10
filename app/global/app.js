@@ -1,3 +1,12 @@
+/**
+ * @ngdoc object
+ * @name Your app name
+ * @description 
+ * This is the starting point of your app
+ * @requires ui.router
+ * @requires page
+ **/
+
 (function() {
     'use strict';
 

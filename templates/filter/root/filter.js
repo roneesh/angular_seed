@@ -1,18 +1,16 @@
-// {%= filter_name %}.filter.js
-
 /**
-* @desc a filter for use in a view file
-* @example in HTML:  {{ some_scope_variable_string | module}}
-    -> results in 'XYZ' becoming 'xyz'
-* @example in HTML: {{ some_scope_variable_string | module}}
-    -> results in 'TEST' becoming 'test'
-*/
+ * @ngdoc filter
+ * @name {%= filter_name %}.filter:{%= filter_name %}.
+ * @description 
+ * filter to do some task
+ * @param {String} text that somehow gets filtered.
+ **/
 
 angular
     .module('{%= app_name %}')
-    .filter('{%= filter_name %}Filter', {%= filter_name %}Filter);
+    .filter('{%= filter_name %}', {%= filter_name %});
 
-function {%= filter_name %}Filter () {
+function {%= filter_name %} () {
   return function (str) {
     return str;
   };

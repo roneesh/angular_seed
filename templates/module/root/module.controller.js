@@ -1,3 +1,10 @@
+/**
+ * @ngdoc controller
+ * @name {%= module_name %}Controller:{%= module_name %}ControllerController
+ * @description
+ * A controller that renders the {%= module_name %} part of the application
+ **/
+
 (function() {
 	'use strict';
 

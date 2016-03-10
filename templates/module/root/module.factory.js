@@ -1,3 +1,12 @@
+/**
+ * @ngdoc service
+ * @name {%= module_name %}.factory:{%= module_name %}Factory
+ * @description
+ * factory functionality here
+ * @requires $http
+ * @requires $rootScope
+ **/
+
 (function() {	
 	'use strict';
 
