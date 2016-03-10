@@ -16,7 +16,7 @@ exports.notes = 'app_name should be the name of your angular app as in the angul
   'module_name should refer to the functionality of the module e.g. "storeLocator" or "productList", and be in camelCase only!' + '\n\n' + 'Prior to use, be sure seed app is fully installed and working (`npm install` and `bower install` should have been run).';
 
 // Template-specific notes to be displayed after question prompts.
-exports.after = 'Have fun! Be sure to add <script> tags to app/index.html';
+exports.after = 'Have fun! You do not have to add script tags to app/index.html, a grunt task takes care of that for you!';
 
 // Any existing file or directory matching this wildcard will cause a warning.
 exports.warnOn = '*';
