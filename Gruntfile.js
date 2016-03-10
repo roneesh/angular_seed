@@ -50,8 +50,10 @@ module.exports = function(grunt) {
                     closeTag: '<!-- end template tags -->'
                 },
                 src: [
+                    '<%= assetsDir %>/global/*.js',
                     '<%= assetsDir %>/**/*.js',
-                    '!<%= assetsDir %>/vendor/**/*.js'
+                    '!<%= assetsDir %>/vendor/**/*.js',
+                    '!<%= assetsDir %>/global/author.js'
                 ],
                 dest: '<%= assetsDir %>/index.html'
             }

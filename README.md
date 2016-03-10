@@ -55,7 +55,7 @@ minified and bundled. Its runtime conterpart comes from script on the JSP (see `
 Wiredep that's used by this project uses conventions in the index.html file to figure out what files to minify.
 It also generates into index.html the list of external dependencies from bower.json. Read this for a better understanding : https://github.com/stephenplusplus/grunt-wiredep
 
-## Issues
+## Issues - Resolved
 * Moving partial views to CQ5 (right now in this repo grunt copy:toasap is broken) -- DONE, went back to old view structure
 * Routing has to handle view files in module folders changing to the 'etc/cq5/route' -- DONE, went back to old view structure
 * all grunt tasks have to still work - DONE, they are working
