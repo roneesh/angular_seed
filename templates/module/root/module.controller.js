@@ -34,7 +34,7 @@
 		// 2. UI variables (e.g. changing triggers ng-show/hide or alters filters)
 		vm.ui = {
 			"showModal" : false,
-			"showDropDown" : true;
+			"showDropDown" : true
 		};
 
 
