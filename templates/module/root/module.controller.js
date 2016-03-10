@@ -66,7 +66,7 @@
 
 	    //6. Omniture variables and private functions
 	     vm.omniture = {
-	    	onClickOfDOMObject = function() {
+	    	onClickOfDOMObject : function() {
 	    		return true
 	    	}
 	    }
