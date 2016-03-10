@@ -88,7 +88,8 @@ module.exports = function(grunt) {
                 ]
             },
             api: {
-                src: ['<%= assetsDir%>/js/**/*.js'],
+                src: ['<%= assetsDir %>/**/*.js',
+                      '!<%= assetsDir %>/vendor/**/*.js'],
                 title: 'Docs'
             }
 
