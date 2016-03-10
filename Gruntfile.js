@@ -3,6 +3,7 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
     grunt.loadNpmTasks('grunt-githooks');
     grunt.loadNpmTasks('grunt-script-link-tags');
+    grunt.loadNpmTasks('grunt-ngdocs');
     grunt.initConfig({
         assetsDir: 'app',
         distDir: 'dist',
@@ -74,6 +75,21 @@ module.exports = function(grunt) {
                 '.tmp',
                 '<%= distDir %>'
             ]
+        },
+        ngdocs: {
+            options: {
+                dest: '<%= distDir %>/docs',
+                html5Mode: false,
+                startPage: '/api/<%= asapComponentName %>',
+                scripts: [
+                    '<%= assetsDir %>/vendor/angular/angular.js'
+                ]
+            },
+            api: {
+                src: ['<%= assetsDir%>/js/**/*.js'],
+                title: 'Docs'
+            }
+
         },
         copy: {
             dist: {
@@ -229,7 +245,7 @@ module.exports = function(grunt) {
             plato: {
                 options: {
                     port: 8889,
-                    base: 'reports/complexity',
+                    base: 'dist/docs',
                     keepalive: true,
                     open: true
                 }
@@ -333,4 +349,5 @@ module.exports = function(grunt) {
         'karma:e2e'
     ]);
     grunt.registerTask('test:unit', ['package','karma:dist_unit:start']);
+    grunt.registerTask('gen:doc', ['clean', 'ngdocs', 'connect:plato']);
 };
