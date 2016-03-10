@@ -2,6 +2,7 @@ module.exports = function(grunt) {
     'use strict';
     require('load-grunt-tasks')(grunt);
     grunt.loadNpmTasks('grunt-githooks');
+    grunt.loadNpmTasks('grunt-script-link-tags');
     grunt.initConfig({
         assetsDir: 'app',
         distDir: 'dist',
@@ -38,6 +39,20 @@ module.exports = function(grunt) {
                         'ci'
                     ]
                 }
+            }
+        },
+        tags: {
+            build: {
+                options: {
+                    scriptTemplate: '<script src="{{ path }}"></script>',
+                    openTag: '<!-- start template tags -->',
+                    closeTag: '<!-- end template tags -->'
+                },
+                src: [
+                    '<%= assetsDir %>/**/*.js',
+                    '!<%= assetsDir %>/vendor/**/*.js'
+                ],
+                dest: '<%= assetsDir %>/index.html'
             }
         },
         githooks: {
@@ -298,6 +313,7 @@ module.exports = function(grunt) {
     grunt.registerTask('dev', [
         'githooks',
         'less',
+        'tags',
         'browserSync:dev',
         //'karma:dev_unit:start',
         'watch'
