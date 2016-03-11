@@ -1,3 +1,7 @@
+//this file is used if grunt command 'karma:dev_unit:start' is used, which is NOT our default in this application. 
+//So editing this file is not effective unless you've setup our Gruntfile to use the 'karma:dev_unit:start' command
+//Running 'karam:dev_unit:start' will test your app in it's current state, served from the /app directory
+
 module.exports = function (config) {
 
     "use strict";

@@ -1,3 +1,6 @@
+//this file is used if grunt command 'karma:dist_unit:start' is used, which is our default in this application
+//Running 'karam:dist_unit:start' will test your app in it's current state, served from the /dist directory, part of running this grunt comamnd is that the app will be packaged for prod into the /dist folder
+
 module.exports = function(config) {
 
     "use strict";
@@ -15,6 +18,7 @@ module.exports = function(config) {
         // list of files / patterns to load in the browser
         files: [
             '../app/vendor/angular/angular.min.js',
+            'global/author.js',
             'js/*.js',
             '../app/vendor/angular-mocks/angular-mocks.js',
             '../test/unit/**/*.js',
