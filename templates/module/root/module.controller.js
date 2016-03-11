@@ -29,6 +29,8 @@
 
 		// 1. Data which holds state
 		vm.someData = undefined;
+		vm.someData1 = 100;
+		$scope.someData2 = 101;
 		
 
 		// 2. UI variables (e.g. changing triggers ng-show/hide or alters filters)

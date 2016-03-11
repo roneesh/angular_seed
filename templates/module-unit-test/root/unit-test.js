@@ -19,4 +19,14 @@ describe("{%= module_name %}Controller", function() {
         expect(testModuleController).toBeDefined();
     });
 
+    //an example of testing any values attached to vm in your controller
+    it('should have a vm.someData value of 100', function() {
+        expect(testModuleController.someData1).toBe(100);
+    });
+
+    //an example of testing any values attached to $scope in your controller
+    it('should have a $scope.someData2 value of 101', function() {
+        expect(testModuleControllerScope.someData2).toBe(101);
+    });
+
 });
