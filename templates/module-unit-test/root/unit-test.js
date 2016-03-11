@@ -1,24 +1,22 @@
 describe("{%= module_name %}Controller", function() {
 
-    var scope;
+    // Varaibles to hold controller function and it's scope to be used in tests
+    var testModuleController,
+        testModuleControllerScope;
 
-    beforeEach(module('{%= app_name %}'));
+    // Loads the angular app and it's dependency of page
+    beforeEach(module("page", "{%= app_name %}"));
 
     // Loads the controllers
-    beforeEach(inject(function($controller, $rootScope, $location, $scope, $state, {%= module_name %}Factory) {
-
-        scope = $rootScope.$new();
-
-        $controller('{%= module_name %}Controller', {
-            $scope: scope
+    beforeEach(inject(function($controller, $rootScope) {
+        testModuleControllerScope = $rootScope.$new();
+        testModuleController = $controller('testModuleController', {
+            $scope: testModuleControllerScope
         });
-
     }));
 
-    it("should have a scope and scope.ui variable initialized", inject(function() {
-        expect(scope.someData).toBe(undefined);
-        expect(scope.ui.showModal).toBe(false);
-        expect(scope.ui.showDropDown).toBe(true);
-    }));
+    it('should have a testModule controller', function() {
+        expect(testModuleController).toBeDefined();
+    });
 
 });
