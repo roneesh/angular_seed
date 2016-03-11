@@ -104,8 +104,8 @@ module.exports = function(grunt) {
                     src: [
                         'index.html',
                         'img/**',
-                        'etc/designs/shc/dynamicCampaignComponent/partials/*',
-                        'js/author.js',
+                        'etc/designs/shc/change_this_to_your_component_name/partials/*',
+                        'global/author.js',
                         'vendor/angular/angular.js'
                     ]
                 }]
@@ -310,6 +310,7 @@ module.exports = function(grunt) {
     });
     grunt.registerTask('ls', ['availabletasks']);
     grunt.registerTask('package', [
+        'tags',
         'jshint',
         'clean',
         'useminPrepare',
