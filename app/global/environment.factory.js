@@ -5,14 +5,31 @@
 		.module('ngcq5')
 		.factory('environmentFactory', environmentFactory);
 
-	environmentFactory.$inject = [];
+	environmentFactory.$inject = ['$location', '$rootScope'];
 
-	function environmentFactory($http, $rootScope) {
+	function environmentFactory($location, $rootScope) {
 		return {
 			getEnvironmentData: getEnvironmentData
 		};
 
-		function getenvironmentData() {
+		function getEnvironmentData() {
+			var env = "PROD",
+		    	host = "SEARS";
+	    //looking at domain to determine environment
+	    if ($location.host().toUpperCase().indexOf('QA') !== -1) {
+	        env = "QA";
+	    } else if ($location.host().toUpperCase().indexOf('STAG') !== -1) {
+	        env = "STAG";
+	    } else if ($location.host().toUpperCase().indexOf('LOCAL') !== -1) {
+	        env = "DEV";
+	    }
+	    if ($location.host().toUpperCase().indexOf('KMART') !== -1) {
+	        host = "KMART";
+	    }
+
+		  //console.log("Environment : " + env);
+      //console.log("Host : " + host);
+
 			var urls = {
 		        "DEV": {
 		            "moduleFactoryEndpoint": "../module/moduleJSON.json",
@@ -27,20 +44,6 @@
 		            "moduleFactoryEndpointt": "http://module.sears.com",
 		        },
 		    };
-		    
-		    var env = "PROD",
-		    	host = "SEARS";
-		    //looking at domain to determine environment
-		    if ($location.host().toUpperCase().indexOf('QA') !== -1) {
-		        env = "QA";
-		    } else if ($location.host().toUpperCase().indexOf('STAG') !== -1) {
-		        env = "STAG";
-		    } else if ($location.host().toUpperCase().indexOf('LOCAL') !== -1) {
-		        env = "DEV";
-		    }
-		    if ($location.host().toUpperCase().indexOf('KMART') !== -1) {
-		        host = "KMART";
-		    }
 
 			return {
 		        "urls": urls,
