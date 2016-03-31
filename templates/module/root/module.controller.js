@@ -12,11 +12,16 @@
 		.module('{%= app_name %}')
 		.controller('{%= module_name %}Controller', {%= module_name %}Controller);
 
-	{%= module_name %}Controller.$inject = ['{%= module_name %}Factory', '$state', '$scope', '$location', '$rootScope'];
+	{%= module_name %}Controller.$inject = ['{%= module_name %}Factory', 'environmentFactory', '$state', '$scope', '$location', '$rootScope'];
 
-	function {%= module_name %}Controller({%= module_name %}Factory, $state, $scope, $location, $rootScope) { 
+	function {%= module_name %}Controller({%= module_name %}Factory, environmentFactory, $state, $scope, $location, $rootScope) { 
 
 		var vm = this; // vm means viewModel
+		
+		vm.environmentData = environmentFactory.getEnvironmentData();
+			// access to environment variables returns:
+			// vm.environmentData.env - 'QA', 'STAG', or 'DEV'
+			// vm.environmentData.host - 'SEARS' or 'KMART'
 
 		// Controllers have 6 areas:
 	    // 1. Data which holds state and is rendered to DOM
