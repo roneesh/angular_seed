@@ -16,12 +16,11 @@
 
 	function {%= module_name %}Controller({%= module_name %}Factory, environmentFactory, omnitureFactory, $state, $scope, $location, $rootScope) { 
 
-		var vm = this; // vm means viewModel
-		
-		vm.environmentData = environmentFactory.getEnvironmentData();
+		var vm = this, // vm means viewModel
+			EF = environmentFactory.getEnvironmentData();
 			// access to environment variables returns:
-			// vm.environmentData.env - 'QA', 'STAG', or 'DEV'
-			// vm.environmentData.host - 'SEARS' or 'KMART'
+			// EF.env - 'QA', 'STAG', or 'DEV'
+			// EF.host - 'SEARS' or 'KMART'
 
 		// Controllers have 6 areas:
 	    // 1. Data which holds state and is rendered to DOM
