@@ -1,22 +1,26 @@
 ngcq5
 ==================
 
-## Prerequisites
-1. Install [node and npm](http://www.nodejs.org)
-2. Install **Grunt** running `npm install -g grunt-cli`
-3. Install **Bower** running `npm install -g bower`
-4. Install **grunt-init** running `npm install -g grunt-init`
-5. `npm install` -- This installs tools for development like grunt and karma
-6. `bower install` -- This installs libaries like Angular
+## First install the project
+1. Fork this project to your Gitlab account then clone, or if you clone directly delete the existing remotes and then push this to your account.
+2. Install [node and npm](http://www.nodejs.org)
+3. Install **Grunt** running `npm install -g grunt-cli`
+4. Install **Bower** running `npm install -g bower`
+5. Install **grunt-init** running `npm install -g grunt-init`
+6. `npm install` -- This installs tools for development like grunt and karma
+7. `bower install` -- This installs libaries like Angular
 
-## Personalize the Project
-*There are a few places where you'll need to change names to suit your project, instead of using the default name of 'ngcq5'
-1. In the Gruntfile, change the 'asapDir' and 'asapComponentName', 'asapDir' is the path of your 'asap' project folder, e.g. '/Users/some_folder/asap', and 'asapComponentName' is the name of your asap component, e.g 'carousel' or 'productCard'
-2. In app/index.html, change the names of the build files in the build:css and build:js comments.
-3. change the name of the folder to your componetns name in asap for the folder below app/etc/designs/shc/
+## Then personalize the project
+*There are a few places where you'll need to change names to suit your project, instead of using the default name of 'ngcq5'. There are also some folders that need renaming.
+
+1. Search the entire folder for 'ngcq5' and change to your apps name.
+2. In the Gruntfile, change the 'asapDir' and 'asapComponentName', 'asapDir' is the path of your 'asap' project folder, e.g. '/Users/some_folder/asap', and 'asapComponentName' is the name of your asap component, e.g 'carousel' or 'productCard'
+3. In app/index.html, change the names of the build files in the build:css and build:js comments and the apps name in the title tag.
+4. rename app/etc/designs/shc/changes_this_to_your_component_name to your asap components name, this will allow files to copy easily
+4. Rename the project by changing the name in app/global/app.js, package.json, and bower.json.
 
 
-## Using Generators via grunt-init
+## Save tons of time with generators
 * The templates folder holds three generator folders: directive, filter and module
 * To run a generator you simply run `grunt-init relative/path/to/geneator/folder`, it is unecessary to run the template.js file at all.
 * Some example commands: `grunt-init ./templates/module`, or `grunt-init ../../templates/directive`
@@ -25,40 +29,27 @@ ngcq5
 * The directive and filter folders are generators to create a single directive or filter file, respectively.
 *If the folder you are generating a file in already has some files in it, you must run --force: `grunt-init --force path/to/template` 
 
-## Developement
+## How to start the development server
 * Run `grunt dev` to start a static web server and open your browser. This will serve files from the `app` folder.
 * Run `grunt prod` to start a static web server and open your browser. This will serve files from the `dist` folder. So your files will be minified etc.,
 * Livereload will be automatically active for both, meaning that you can see your modification on the browser without hitting F5.
 * `jshint` and/or `csslint` will be run on your files when they change.
 * If you choose to have unit tests, they will be run as your test and source files change.
 
-## Package for Production
+## How to package for production
 * Run `grunt package` to package your static assets for production.
 * Your package will be generated in a `dist` folder and your javascripts and stylesheets will be concatenated, minified and versionned.
 * The files you will need to carry over into CQ5 (JS, CSS, HTML) will be in the dist folder.
 
-## Other Grunt tasks
+## Other grunt tasks you can do
 * `grunt test:unit` : Package and run karma unit tests. This is also run automatically as a pre-commit hook.
 * `grunt report` : open complexity report in your browser
 
-## CQ5 gotchas
+## Be aware of these CQ5 gotchas
 * The module `page` present in `author.js` is mocking what comes from a CQ5 author. It is not part of the js files which get
 minified and bundled. Its runtime conterpart comes from script on the JSP (see `sampleCQ5JSP.jsp`)
 * angular.min.js is also packaged from CQ5 directly as it's already present as a node.
 
-## Steps to get started
-* Clone this repo
-* Rename the project by changing the name in app.js, package.json, index.html, and bower.json.
-* Remove/Modify existing bootstrap controllers, routes, views as needed.
-* Package and move to CQ5.
-
 ## Wiredep
 Wiredep that's used by this project uses conventions in the index.html file to figure out what files to minify.
 It also generates into index.html the list of external dependencies from bower.json. Read this for a better understanding : https://github.com/stephenplusplus/grunt-wiredep
-
-## Issues - Resolved
-* Moving partial views to CQ5 (right now in this repo grunt copy:toasap is broken) -- DONE, went back to old view structure
-* Routing has to handle view files in module folders changing to the 'etc/cq5/route' -- DONE, went back to old view structure
-* all grunt tasks have to still work - DONE, they are working
-* moving views to cq5 has to be easy and bug free -- DONE, grunt copy task for this
-* adding script tags to index.html via grunt -- DONE, via grunt grunt-script-link-tags plugin

@@ -8,7 +8,7 @@ module.exports = function(grunt) {
         assetsDir: 'app',
         distDir: 'dist',
         asapDir: './fakeASAP',
-        asapComponentName: 'exampleComponent',
+        asapComponentName: 'ngcq5',
         availabletasks: {
             tasks: {
                 options: {
