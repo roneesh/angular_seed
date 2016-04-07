@@ -314,7 +314,7 @@ module.exports = function(grunt) {
         'jshint',
         'clean',
         'useminPrepare',
-        'copy',
+        'copy:dist',
         'concat',
         'ngAnnotate',
         'uglify',
