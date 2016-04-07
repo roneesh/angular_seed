@@ -22,7 +22,8 @@ ngcq5
 * Some example commands: `grunt-init ./templates/module`, or `grunt-init ../../templates/directive`
 * The generator will create the files in whatever folder you are currently inside of in Terminal, so make sure you are in the folder where you want the files to be created
 * The module folder will create our style of module for an angular project, it will create our desired folder structure and style of writing a contorller and factory, it will also create folders to put directives and filters
-* The directive and filter folders are generators to create a single directive or filter file, respectively. 
+* The directive and filter folders are generators to create a single directive or filter file, respectively.
+*If the folder you are generating a file in already has some files in it, you must run --force: `grunt-init --force path/to/template` 
 
 ## Developement
 * Run `grunt dev` to start a static web server and open your browser. This will serve files from the `app` folder.
