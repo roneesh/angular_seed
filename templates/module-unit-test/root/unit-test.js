@@ -11,7 +11,7 @@ describe("{%= module_name %}Controller", function() {
     beforeEach(inject(function($controller, $rootScope) {
         {%= module_name %}ControllerScope = $rootScope.$new();
         {%= module_name %}Controller = $controller('testModuleController', {
-            $scope: testModuleControllerScope
+            $scope: {%= module_name %}ControllerScope
         });
     }));
 
