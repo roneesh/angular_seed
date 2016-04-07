@@ -15,10 +15,11 @@ ngcq5
 *There are a few places where you'll need to change names to suit your project, instead of using the default name of 'ngcq5'. There are also some folders that need renaming.
 
 1. Search the ./app for 'ngcq5' and change to your component name.
-2. In the Gruntfile, change the 'asapDir' and 'asapComponentName'. -- 'asapDir' is the path of your 'asap' project folder, e.g. '/Users/some_folder/asap', and 'asapComponentName' is the name of your asap component. If you don't change 'asapDir' then grunt:copytoasap will be broken.
-3. rename app/etc/designs/shc/changes_this_to_your_component_name to your asap components name, this will allow files to copy easily
-4. package.json and bower.json have instances of 'ngcq5' that need to be changed to your component name.
-5. If at any point in development you encounter an 'ngcq5' not listed here, change it to your components name.
+2. in app/global/app.js change the templateURL folder to your asap component name
+3. In the Gruntfile, change the 'asapDir' and 'asapComponentName'. -- 'asapDir' is the path of your 'asap' project folder, e.g. '/Users/some_folder/asap', and 'asapComponentName' is the name of your asap component. If you don't change 'asapDir' then grunt:copytoasap will be broken.
+4. rename app/etc/designs/shc/changes_this_to_your_component_name to your asap components name, this will allow files to copy easily
+5. package.json and bower.json have instances of 'ngcq5' that need to be changed to your component name.
+6. If at any point in development you encounter an 'ngcq5' not listed here, change it to your components name.
 
 
 ## Save tons of time with generators
