@@ -1,4 +1,4 @@
-ngcq5
+ngcq5 - Our Angular(ng) + CQ5 seed app
 ==================
 
 ## First install the project
