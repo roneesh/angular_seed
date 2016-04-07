@@ -132,21 +132,22 @@ module.exports = function(grunt) {
                     flatten: true,
                     filter: 'isFile'
                 }]
-            },
-            toasapjenkins: {
-                files: [{
-                    src: ['dist/js/*.js'],
-                    dest: '../ASAP-QA/aem-vault/jcr_root/etc/designs/shc/**/clientlibs/js'
-                }, {
-                    expand: true,
-                    cwd: 'dist/etc',
-                    src: ['**'],
-                    dest: '../ASAP-QA/aem-vault/jcr_root/etc/'
-                }, {
-                    src: ['dist/css/*.css'],
-                    dest: '../ASAP-QA/aem-vault/jcr_root/etc/designs/shc/**/clientli\bs/css'
-                }]
             }
+            // ,
+            // toasapjenkins: {
+            //     files: [{
+            //         src: ['dist/js/*.js'],
+            //         dest: '../ASAP-QA/aem-vault/jcr_root/etc/designs/shc/**/clientlibs/js'
+            //     }, {
+            //         expand: true,
+            //         cwd: 'dist/etc',
+            //         src: ['**'],
+            //         dest: '../ASAP-QA/aem-vault/jcr_root/etc/'
+            //     }, {
+            //         src: ['dist/css/*.css'],
+            //         dest: '../ASAP-QA/aem-vault/jcr_root/etc/designs/shc/**/clientli\bs/css'
+            //     }]
+            // }
         },
         ngAnnotate: {
             options: {},
