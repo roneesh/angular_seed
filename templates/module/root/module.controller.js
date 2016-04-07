@@ -12,9 +12,9 @@
 		.module('{%= app_name %}')
 		.controller('{%= module_name %}Controller', {%= module_name %}Controller);
 
-	{%= module_name %}Controller.$inject = ['{%= module_name %}Factory', 'environmentFactory', '$state', '$scope', '$location', '$rootScope'];
+	{%= module_name %}Controller.$inject = ['{%= module_name %}Factory', 'environmentFactory', 'omnitureFactory', '$state', '$scope', '$location', '$rootScope'];
 
-	function {%= module_name %}Controller({%= module_name %}Factory, environmentFactory, $state, $scope, $location, $rootScope) { 
+	function {%= module_name %}Controller({%= module_name %}Factory, environmentFactory, omnitureFactory, $state, $scope, $location, $rootScope) { 
 
 		var vm = this; // vm means viewModel
 		

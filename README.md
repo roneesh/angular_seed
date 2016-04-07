@@ -31,6 +31,11 @@ ngcq5
 * The directive and filter folders are generators to create a single directive or filter file, respectively.
 *If the folder you are generating a file in already has some files in it, you must run --force: `grunt-init --force path/to/template` 
 
+## Use Test Driven Development
+* This seed app is fully up and running with TDD, simply generate a module in the app folder and then generate a unit-test in test/unit via `grunt-init --force ../../templates/module-unit-test`
+*run `grunt prod` first to build your app and then check that there are no errors in conosle, if there are your tests will fail
+*run tests with `grunt test:unit`, it will run tests using your packaged app in the dist folder as its source, this makes sure our tests pass even after it's been minified for production
+
 ## How to start the development server
 * Run `grunt dev` to start a static web server and open your browser. This will serve files from the `app` folder.
 * Run `grunt prod` to start a static web server and open your browser. This will serve files from the `dist` folder. So your files will be minified etc.,
