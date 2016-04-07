@@ -10,12 +10,12 @@ describe("{%= module_name %}Controller", function() {
     // Loads the controllers
     beforeEach(inject(function($controller, $rootScope) {
         {%= module_name %}ControllerScope = $rootScope.$new();
-        {%= module_name %}Controller = $controller('testModuleController', {
+        {%= module_name %}Controller = $controller('{%= module_name %}Controller', {
             $scope: {%= module_name %}ControllerScope
         });
     }));
 
-    it('should have a testModule controller', function() {
+    it('should have a {%= module_name %} controller', function() {
         expect({%= module_name %}Controller).toBeDefined();
     });
 
