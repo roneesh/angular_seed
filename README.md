@@ -2,22 +2,23 @@ ngcq5
 ==================
 
 ## First install the project
-1. Fork this project to your Gitlab account then clone, or if you clone directly delete the existing remotes and then push this to your account.
-2. Install [node and npm](http://www.nodejs.org)
-3. Install **Grunt** running `npm install -g grunt-cli`
-4. Install **Bower** running `npm install -g bower`
-5. Install **grunt-init** running `npm install -g grunt-init`
-6. `npm install` -- This installs tools for development like grunt and karma
-7. `bower install` -- This installs libaries like Angular
+1. Fork this project to your Gitlab account.
+2. Clone and rename in one command: `git clone [url] [your components name]`
+3. Install [node and npm](http://www.nodejs.org)
+4. Install **Grunt** running `npm install -g grunt-cli`
+5. Install **Bower** running `npm install -g bower`
+6. Install **grunt-init** running `npm install -g grunt-init`
+7. `npm install` -- This installs tools for development like grunt and karma
+8. `bower install` -- This installs libaries like Angular
 
 ## Then personalize the project
 *There are a few places where you'll need to change names to suit your project, instead of using the default name of 'ngcq5'. There are also some folders that need renaming.
 
-1. Search the entire folder for 'ngcq5' and change to your apps name.
-2. In the Gruntfile, change the 'asapDir' and 'asapComponentName', 'asapDir' is the path of your 'asap' project folder, e.g. '/Users/some_folder/asap', and 'asapComponentName' is the name of your asap component, e.g 'carousel' or 'productCard'
-3. In app/index.html, change the names of the build files in the build:css and build:js comments and the apps name in the title tag.
-4. rename app/etc/designs/shc/changes_this_to_your_component_name to your asap components name, this will allow files to copy easily
-4. Rename the project by changing the name in app/global/app.js, package.json, and bower.json.
+1. Search the entire folder for 'ngcq5' and change to your component name.
+2. In the Gruntfile, change the 'asapDir' and 'asapComponentName'. -- 'asapDir' is the path of your 'asap' project folder, e.g. '/Users/some_folder/asap', and 'asapComponentName' is the name of your asap component. If you don't change 'asapDir' then grunt:copytoasap will be broken.
+3. rename app/etc/designs/shc/changes_this_to_your_component_name to your asap components name, this will allow files to copy easily
+4. app/index.html, app/global/app.js, package.json and bower.json have instances of 'ngcq5' that need to be changed to your component name.
+5. If at any point in development you encounter an 'ngcq5' not listed here, change it to your components name.
 
 
 ## Save tons of time with generators
