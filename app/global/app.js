@@ -15,13 +15,13 @@
         .config(config);
 
     function config($stateProvider, $locationProvider) {
-        // $stateProvider
-        //     .state('home', {
-        //         url: '/',
-        //         templateUrl: '/etc/designs/shc/change_this_to_your_component_name/partials/example.html',
-        //         controller: '',
-        //         controllerAs: 'vm'
-        //     });
-        //$locationProvider.html5Mode(true);
+        $stateProvider
+            .state('home', {
+                url: '/',
+                templateUrl: '/etc/designs/shc/change_this_to_your_component_name/partials/example.html',
+                controller: '',
+                controllerAs: 'vm'
+            });
+        $locationProvider.html5Mode(true);
     }
 })();

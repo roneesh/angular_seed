@@ -104,7 +104,7 @@ module.exports = function(grunt) {
                     src: [
                         'index.html',
                         'img/**',
-                        'etc/designs/shc/change_this_to_your_component_name/partials/*',
+                        'etc/designs/shc/<%= asapComponentName %>/partials/*',
                         'global/author.js',
                         'vendor/angular/angular.js'
                     ]
