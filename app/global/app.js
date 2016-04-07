@@ -17,8 +17,8 @@
     function config($stateProvider, $locationProvider) {
         // $stateProvider
         //     .state('home', {
-        //         url: '/etc/designs/shc/change_this_to_your_component_name/partials/example.html',
-        //         templateUrl: '',
+        //         url: '/',
+        //         templateUrl: '/etc/designs/shc/change_this_to_your_component_name/partials/example.html',
         //         controller: '',
         //         controllerAs: 'vm'
         //     });
